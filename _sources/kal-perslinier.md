@@ -37,23 +37,22 @@ c. Sistem Tidak Konsisten (Tidak Memiliki Solusi)
 
 - Misalkan ada sistem persamaan linier:
 
-$
 \begin{array}{cc}
 x+y+z=6\\
 2_x+3_y+z=14\\
 y+2_z=8\\
 \end{array}
-$
+
 
 - Dalam bentuk matriks augmented:
 
-$
+\
 \begin{bmatrix}
 1 & 1 & 1&|6 \\
 2 & 3 & 1&|14 \\
-0 & 1 & 2&|8
+0 & 1 & 2&|8 \\
 \end{bmatrix}
-$
+
 
 
 
@@ -72,17 +71,15 @@ x_3+x_2&=2\\
 \end{array}
 $$
 
-jawaban:
+jawaban: 
 
-$
 \begin{bmatrix}
 1 & 2 & 3 & | 6\\
 2 & 4 & 6 & | 12\\
 0 & 1 & 1 & | 2\\
 \end{bmatrix}
-$
 
-
+\
 $$
 \begin{array}{cc}
 R_2 \rightarrow R_2 \rightarrow 2R_1\\
@@ -91,30 +88,28 @@ $$
 
 Sehingga:
 
-$
 \begin{bmatrix}
 1 & 2 & 3 & | 6 \\
 0 & 0 & 0 & | 0 \\
 0 & 1 & 1 & | 2 \\
 \end{bmatrix}
-$
 
-$
+\
 \begin{aligned}
 x_1 + 2x_2 + 3x_3 &= 6 \\
 x_2 + x_3 &= 2
 \end{aligned}
-$
 
-$
+\
+$$
 \begin{array}{cc}
 x_2 = 2 - x_3\\
 \end{array}
-$
+$$
 
 Substitusikan ke persamaan pertama:
 
-$
+\
 \begin{array}{cc}
 x_1 + 2(2 - x_3) + 3x_3 = 6
 \end{array}
@@ -135,14 +130,14 @@ x_1 = 2 - x_3
 \end{array}
 
 Kesimpulan:
-
-
+\
+$$
 \begin{aligned}
 x_1 &= 2 - x_3 \\
 x_2 &= 2 - x_3 \\
 x_3 &= x_3
 \end{aligned}
-
+$$
 
 sistem ini tak hingga banyak solusi
 
@@ -150,24 +145,25 @@ sistem ini tak hingga banyak solusi
 
 * contoh soal 2
 
-
+$$
 \begin{array}{cc}
 x_1+x_2+x_3=3\\
 2x_1+x_3=5\\
 x_1+2x_2=3\\
 \end{array}
-
+$$
 
 
 jawaban:
 
-
+\
+$$
 \begin{bmatrix}
 1 & 1 & 1 & | 3 \\
 2 & 0 & 1 & | 5 \\
 1 & 2 & 0 & | 3 \\
 \end{bmatrix}
-
+$$
 
 Gunakan Operasi:
 
@@ -256,10 +252,11 @@ x_1 + x_2 + x_3 = 3
 \end{array}
 
 
+$$
 \begin{array}{cc}
 x_1 = 3 - \frac{2}{3} = \frac{9}{3} - \frac{2}{3} = \frac{7}{3}
 \end{array}
-
+$$
 
 Jadi, solusi dari sistem persamaan adalah:
 
@@ -273,12 +270,12 @@ x_3 &= \frac{1}{3}
 
 * contoh soal 3
 
-
+$$
 \begin{array}{cc}
 2x_1+2x_2=4\\
 x_1+x_2=2\\
 \end{array}
-
+$$
 
 jawaban:
 
@@ -314,11 +311,12 @@ sederhanakan:
 
 * contoh soal 4
 
+$$
 \begin{array}{cc}
 x_1+x_2=5\\
 x_1+2x_3=6\\
 \end{array}
-
+$$
 
 jawaban:
 
