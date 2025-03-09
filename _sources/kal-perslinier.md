@@ -3,8 +3,57 @@ title: 'Penyelesaian Sistem Persamaan '
 
 ---
 
-## Penyelesaian Sistem Persamaan Linier
+# Penyelesaian Sistem Persamaan Linier
+
+Penyelesaian Sistem Persamaan Linier (SPL) adalah proses mencari nilai variabel yang memenuhi semua persamaan dalam sistem persamaan linier secara bersamaan. Sistem ini terdiri dari beberapa persamaan linier yang memiliki satu atau lebih variabel.
+
+
+1. Jenis Penyelesaian SPL
+
+Sistem persamaan linier bisa memiliki tiga kemungkinan solusi:
+
+a. Sistem Konsisten dan Memiliki Satu Solusi (Tunggal)
+
+- Garis atau bidang bertemu di satu titik.
+- Sistem ini memiliki solusi unik.
+
+b. Sistem Konsisten dan Memiliki Banyak Solusi (Tak Hingga Solusi)
+
+- Garis atau bidang saling berhimpit.
+- Sistem ini memiliki solusi tak terbatas.
+
+c. Sistem Tidak Konsisten (Tidak Memiliki Solusi)
+- Garis atau bidang saling sejajar tetapi tidak  bertemu.
+- Sistem ini tidak memiliki solusi.
+
+
+
+
 ## Operasi Baris Elementer
+
+(OBE) adalah operasi yang dilakukan pada baris suatu matriks untuk menyelesaikan sistem persamaan linear (SPL). OBE juga dapat digunakan untuk menentukan invers suatu matrik.
+
+1. Contoh Penyelesaian Sistem Persamaan Linier dengan OBE
+
+- Misalkan ada sistem persamaan linier:
+
+\begin{array}{cc}
+x+y+z=6\\
+2_x+3_y+z=14\\
+y+2_z=8\\
+\end{array}
+
+
+Dalam bentuk matriks augmented:
+
+\
+\begin{bmatrix}
+1 & 1 & 1&|6 \\
+2 & 3 & 1&|14 \\
+0 & 1 & 2&|8
+\end{bmatrix}
+
+
 
 
 ## Eliminasi Gaus
@@ -41,7 +90,7 @@ Sehingga:
 \begin{bmatrix}
 1 & 2 & 3 & | 6 \\
 0 & 0 & 0 & | 0 \\
-0 & 1 & 1 & | 2
+0 & 1 & 1 & | 2 \\
 \end{bmatrix}
 
 \
@@ -111,7 +160,7 @@ $$
 \begin{bmatrix}
 1 & 1 & 1 & | 3 \\
 2 & 0 & 1 & | 5 \\
-1 & 2 & 0 & | 3
+1 & 2 & 0 & | 3 \\
 \end{bmatrix}
 $$
 
