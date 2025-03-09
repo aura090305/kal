@@ -173,6 +173,9 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Penyelesaian Sistem Persamaan Linier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="matriks.html">Matriks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solusi%20perslinier.html"><strong>Solusi Persamaan Linier</strong></a></li>
+
+
 </ul>
 
     </div>
@@ -409,20 +412,23 @@
 <ul class="simple">
 <li><p>Misalkan ada sistem persamaan linier:</p></li>
 </ul>
-<p>\begin{array}{cc}
-x+y+z=6\
-2_x+3_y+z=14\
-y+2_z=8\
-\end{array}</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
+x+y+z=6\\
+2_x+3_y+z=14\\
+y+2_z=8\\
+\end{array}
+\)</span></p>
 <ul class="simple">
 <li><p>Dalam bentuk matriks augmented:</p></li>
 </ul>
-<p><br />
+<p><span class="math notranslate nohighlight">\(
 \begin{bmatrix}
-1 &amp; 1 &amp; 1&amp;|6 \
-2 &amp; 3 &amp; 1&amp;|14 \
-0 &amp; 1 &amp; 2&amp;|8 \
-\end{bmatrix}</p>
+1 &amp; 1 &amp; 1&amp;|6 \\
+2 &amp; 3 &amp; 1&amp;|14 \\
+0 &amp; 1 &amp; 2&amp;|8 \\
+\end{bmatrix}
+\)</span></p>
 </section>
 <section id="eliminasi-gaus">
 <h2>Eliminasi Gaus<a class="headerlink" href="#eliminasi-gaus" title="Link to this heading">#</a></h2>
@@ -431,247 +437,284 @@ y+2_z=8\
 <li><p>contoh soal 1
 selesaikan dengan eliminasi gaus</p></li>
 </ul>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<p><span class="math notranslate nohighlight">\(
 \begin{array}{cc}
 x_1+2x_2+3x_3&amp;=6\\
 2x_1+4x_2+6x_3&amp;=12\\
 x_3+x_2&amp;=2\\
 \end{array}
-\end{split}\]</div>
+\)</span></p>
 <p>jawaban:</p>
-<p>\begin{bmatrix}
-1 &amp; 2 &amp; 3 &amp; | 6\
-2 &amp; 4 &amp; 6 &amp; | 12\
-0 &amp; 1 &amp; 1 &amp; | 2\
-\end{bmatrix}</p>
-<p><br />
-$<span class="math notranslate nohighlight">\(
+<p><span class="math notranslate nohighlight">\(
+\begin{bmatrix}
+1 &amp; 2 &amp; 3 &amp; | 6\\
+2 &amp; 4 &amp; 6 &amp; | 12\\
+0 &amp; 1 &amp; 1 &amp; | 2\\
+\end{bmatrix}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
 \begin{array}{cc}
 R_2 \rightarrow R_2 \rightarrow 2R_1\\
 \end{array}
-\)</span>$</p>
+\)</span></p>
 <p>Sehingga:</p>
-<p>\begin{bmatrix}
-1 &amp; 2 &amp; 3 &amp; | 6 \
-0 &amp; 0 &amp; 0 &amp; | 0 \
-0 &amp; 1 &amp; 1 &amp; | 2 \
-\end{bmatrix}</p>
-<p><br />
+<p><span class="math notranslate nohighlight">\(
+\begin{bmatrix}
+1 &amp; 2 &amp; 3 &amp; | 6 \\
+0 &amp; 0 &amp; 0 &amp; | 0 \\
+0 &amp; 1 &amp; 1 &amp; | 2 \\
+\end{bmatrix}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
 \begin{aligned}
-x_1 + 2x_2 + 3x_3 &amp;= 6 \
+x_1 + 2x_2 + 3x_3 &amp;= 6 \\
 x_2 + x_3 &amp;= 2
-\end{aligned}</p>
-<p><br />
-$<span class="math notranslate nohighlight">\(
+\end{aligned}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
 \begin{array}{cc}
 x_2 = 2 - x_3\\
 \end{array}
-\)</span>$</p>
+\)</span></p>
 <p>Substitusikan ke persamaan pertama:</p>
-<p><br />
+<p><span class="math notranslate nohighlight">\(
 \begin{array}{cc}
 x_1 + 2(2 - x_3) + 3x_3 = 6
-\end{array}</p>
-<p><br />
+\end{array}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
 \begin{array}{cc}
 x_1 + 4 - 2x_3 + 3x_3 = 6
-\end{array}</p>
-<p><br />
+\end{array}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
 \begin{array}{cc}
 x_1 + 4 + x_3 = 6
-\end{array}</p>
-<p><br />
+\end{array}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
 \begin{array}{cc}
 x_1 = 2 - x_3
-\end{array}</p>
-<p>Kesimpulan:
-<br />
-$<span class="math notranslate nohighlight">\(
+\end{array}
+\)</span>
+Kesimpulan:</p>
+<p><span class="math notranslate nohighlight">\(
 \begin{aligned}
 x_1 &amp;= 2 - x_3 \\
 x_2 &amp;= 2 - x_3 \\
 x_3 &amp;= x_3
 \end{aligned}
-\)</span>$</p>
+\)</span></p>
 <p>sistem ini tak hingga banyak solusi</p>
 <ul class="simple">
 <li><p>contoh soal 2</p></li>
 </ul>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<p><span class="math notranslate nohighlight">\(
 \begin{array}{cc}
 x_1+x_2+x_3=3\\
 2x_1+x_3=5\\
 x_1+2x_2=3\\
 \end{array}
-\end{split}\]</div>
+\)</span></p>
 <p>jawaban:</p>
-<p><br />
-$<span class="math notranslate nohighlight">\(
+<p><span class="math notranslate nohighlight">\(
 \begin{bmatrix}
 1 &amp; 1 &amp; 1 &amp; | 3 \\
 2 &amp; 0 &amp; 1 &amp; | 5 \\
 1 &amp; 2 &amp; 0 &amp; | 3 \\
 \end{bmatrix}
-\)</span>$</p>
+\)</span></p>
 <p>Gunakan Operasi:</p>
-<p>\begin{array}{cc}
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
 R_2 \rightarrow R_2 \rightarrow 2R_1
-\end{array}</p>
-<p>\begin{array}{cc}
+\end{array}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
 R_3 \rightarrow R_3 \rightarrow R_1
-\end{array}</p>
+\end{array}
+\)</span></p>
 <p>Sehingga matriks berubah menjadi:</p>
-<p><br />
+<p><span class="math notranslate nohighlight">\(
 \begin{bmatrix}
-1 &amp; 1 &amp; 1 &amp; | 3 \
-0 &amp; -2 &amp; -1 &amp; | -1 \
+1 &amp; 1 &amp; 1 &amp; | 3 \\
+0 &amp; -2 &amp; -1 &amp; | -1 \\
 0 &amp; 1 &amp; -1 &amp; | 0
-\end{bmatrix}</p>
+\end{bmatrix}
+\)</span></p>
 <p>Selanjutnya, buat elemen utama di baris kedua menjadi 1 dengan membagi baris kedua dengan -2:</p>
-<p>\begin{array}{cc}
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
 R_2 \rightarrow \frac{R_2}{-2}
-\end{array}</p>
+\end{array}
+\)</span></p>
 <p>Hasilnya:</p>
-<p><br />
+<p><span class="math notranslate nohighlight">\(
 \begin{bmatrix}
-1 &amp; 1 &amp; 1 &amp; | 3 \
-0 &amp; 1 &amp; \frac{1}{2} &amp; | \frac{1}{2} \
+1 &amp; 1 &amp; 1 &amp; | 3 \\
+0 &amp; 1 &amp; \frac{1}{2} &amp; | \frac{1}{2} \\
 0 &amp; 1 &amp; -1 &amp; | 0
-\end{bmatrix}</p>
+\end{bmatrix}
+\)</span></p>
 <p>Kemudian eliminasi elemen di bawah elemen utama dengan:</p>
-<p>\begin{array}{cc}
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
 R_3 \rightarrow R_3 - R_2
-\end{array}</p>
+\end{array}
+\)</span></p>
 <p>Sehingga diperoleh:</p>
-<p><br />
+<p><span class="math notranslate nohighlight">\(
 \begin{bmatrix}
-1 &amp; 1 &amp; 1 &amp; | 3 \
-0 &amp; 1 &amp; \frac{1}{2} &amp; | \frac{1}{2} \
+1 &amp; 1 &amp; 1 &amp; | 3 \\
+0 &amp; 1 &amp; \frac{1}{2} &amp; | \frac{1}{2} \\
 0 &amp; 0 &amp; -\frac{3}{2} &amp; | -\frac{1}{2}
-\end{bmatrix}</p>
+\end{bmatrix}
+\)</span></p>
 <p>subtitusi balik:</p>
 <p>Dari baris ketiga:</p>
-<p>\begin{array}{cc}
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
 -\frac{3}{2} x_3 = -\frac{1}{2}
-\end{array}</p>
-<p>\begin{array}{cc}
+\end{array}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
 x_3 = \frac{1}{3}
-\end{array}</p>
+\end{array}
+\)</span></p>
 <p>Dari baris kedua:</p>
-<p>\begin{array}{cc}
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
 x_2 + \frac{1}{2} x_3 = \frac{1}{2}
-\end{array}</p>
-<p>\begin{array}{cc}
+\end{array}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
 x_2 + \frac{1}{2} \times \frac{1}{3} = \frac{1}{2}
-\end{array}</p>
-<p>\begin{array}{cc}
+\end{array}
+\)</span>
+<span class="math notranslate nohighlight">\(
+\begin{array}{cc}
 x_2 + \frac{1}{6} = \frac{1}{2}
-\end{array}</p>
-<p>\begin{array}{cc}
+\end{array}
+\)</span>
+<span class="math notranslate nohighlight">\(
+\begin{array}{cc}
 x_2 = \frac{1}{2} - \frac{1}{6} = \frac{3}{6} - \frac{1}{6} = \frac{2}{6} = \frac{1}{3}
-\end{array}</p>
-<p>Dari baris pertama:</p>
-<p>\begin{array}{cc}
+\end{array}
+\)</span>
+Dari baris pertama:
+<span class="math notranslate nohighlight">\(
+\begin{array}{cc}
 x_1 + x_2 + x_3 = 3
-\end{array}</p>
-<div class="math notranslate nohighlight">
-\[
+\end{array}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
 \begin{array}{cc}
 x_1 = 3 - \frac{2}{3} = \frac{9}{3} - \frac{2}{3} = \frac{7}{3}
 \end{array}
-\]</div>
+\)</span></p>
 <p>Jadi, solusi dari sistem persamaan adalah:</p>
-<p><br />
+<p><span class="math notranslate nohighlight">\(
 \begin{aligned}
-x_1 &amp;= \frac{7}{3} \
-x_2 &amp;= \frac{1}{3} \
+x_1 &amp;= \frac{7}{3} \\
+x_2 &amp;= \frac{1}{3} \\
 x_3 &amp;= \frac{1}{3}
-\end{aligned}</p>
+\end{aligned}
+\)</span></p>
+<iframe scrolling="no" title="Lab11 System of Equations - Multivariable" src="https://www.geogebra.org/material/iframe/id/dmIAq6KX/width/1164/height/816/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/true/ld/false/sdz/true/ctl/false" width="1164px" height="816px" style="border:0px;"> </iframe>
 <ul class="simple">
 <li><p>contoh soal 3</p></li>
 </ul>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<p><span class="math notranslate nohighlight">\(
 \begin{array}{cc}
 2x_1+2x_2=4\\
 x_1+x_2=2\\
 \end{array}
-\end{split}\]</div>
+\)</span></p>
 <p>jawaban:</p>
-<p>\begin{array}{cc}
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
 x_1+x_2=2
-\end{array}</p>
+\end{array}
+\)</span></p>
 <p>kita bisa menyatakan x1 dalam bentuk x2:</p>
-<p>\begin{array}{cc}
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
 x_1=2-x_2
-\end{array}</p>
+\end{array}
+\)</span></p>
 <p>subtitusi ke persamaan pertama:</p>
-<p>\begin{array}{cc}
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
 2(2-x_2)+2x_2=4
-\end{array}</p>
+\end{array}
+\)</span></p>
 <p>Distrubikan:</p>
-<p>\begin{array}{cc}
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
 4-2x_2+2x_2=4
-\end{array}</p>
+\end{array}
+\)</span></p>
 <p>sederhanakan:</p>
-<p>\begin{array}{cc}
+<p><span class="math notranslate nohighlight">\(\begin{array}{cc}
 4=4
-\end{array}</p>
+\end{array}
+\)</span></p>
 <ul class="simple">
 <li><p>contoh soal 4</p></li>
 </ul>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<p><span class="math notranslate nohighlight">\(
 \begin{array}{cc}
 x_1+x_2=5\\
 x_1+2x_3=6\\
 \end{array}
-\end{split}\]</div>
+\)</span></p>
 <p>jawaban:</p>
 <ol class="arabic">
-<li><p>Nyatakan x1 dari persamaan pertama:</p>
-<p>\begin{array}{cc}
+<li><p>Nyatakan x1 dari persamaan pertama:
+<span class="math notranslate nohighlight">\(
+\begin{array}{cc}
 x_1 = 5 - x_2
-\end{array}</p>
-</li>
-<li><p>Substitusikan ke persamaan kedua:</p>
-<p>\begin{array}{cc}
+\end{array}
+\)</span></p></li>
+<li><p>Substitusikan ke persamaan kedua:
+<span class="math notranslate nohighlight">\(
+\begin{array}{cc}
 (5 - x_2) + 2x_3 = 6
-\end{array}</p>
-</li>
+\end{array}\)</span></p></li>
 <li><p>Sederhanakan:</p>
-<p>\begin{array}{cc}
+<p><span class="math notranslate nohighlight">\(\begin{array}{cc}
 5 - x_2 + 2x_3 = 6
-\end{array}</p>
+\end{array}\)</span></p>
 </li>
 <li><p>Susun ulang:</p>
-<p>\begin{array}{cc}
+<p><span class="math notranslate nohighlight">\(\begin{array}{cc}
 -x_2 + 2x_3 = 1
-\end{array}</p>
+\end{array}\)</span></p>
 </li>
 <li><p>Nyatakan x2 dalam bentuk x3:</p>
-<p>\begin{array}{cc}
+<p><span class="math notranslate nohighlight">\(\begin{array}{cc}
 x_2 = 2x_3 - 1
-\end{array}</p>
+\end{array}\)</span></p>
 </li>
 <li><p>Substitusikan kembali ke ekspresi x1:</p>
-<p>\begin{array}{cc}
+<p><span class="math notranslate nohighlight">\(\begin{array}{cc}
 x_1 = 5 - (2x_3 - 1)
-\end{array}</p>
+\end{array}\)</span></p>
 </li>
 <li><p>Sederhanakan:</p>
-<p>\begin{array}{cc}
+<p><span class="math notranslate nohighlight">\(\begin{array}{cc}
 x_1 = 6 - 2x_3
-\end{array}</p>
+\end{array}\)</span></p>
 </li>
 </ol>
 <p>Jadi, solusi umum untuk sistem ini adalah:</p>
-<p>\begin{array}{cc}
+<p><span class="math notranslate nohighlight">\(\begin{array}{cc}
 x_1 = 6 - 2t, \quad x_2 = 2t - 1, \quad x_3 = t
-\end{array}</p>
-<p>dengan ( t ) sebagai parameter bebas.</p>
+\end{array}\)</span></p>
+<p>dengan <span class="math notranslate nohighlight">\(( t \)\)</span> sebagai parameter bebas.</p>
 </section>
 </section>
 
