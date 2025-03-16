@@ -60,9 +60,12 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'matriks';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Solusi Persamaan Linier" href="Solusi%20perslinier.html" />
     <link rel="prev" title="Penyelesaian Sistem Persamaan Linier" href="kal-perslinier.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -169,9 +172,10 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="kal-perslinier.html">Penyelesaian Sistem Persamaan Linier</a></li>
-
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Matriks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Solusi%20perslinier.html"><strong>Solusi Persamaan Linier</strong></a></li>
+
+
 </ul>
 
     </div>
@@ -379,6 +383,12 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-perkalian-matriks-dengan-skalar">Konsep Perkalian Matriks dengan Skalar</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-persamaan-menggunakan-invers-matrik">Penyelesaian persamaan menggunakan invers matrik</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-matriks"><strong>1. Bentuk Matriks</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-a-1-menggunakan-operasi-baris-elementer"><strong>2. Menentukan <span class="math notranslate nohighlight">\( A^{-1} \)</span> Menggunakan Operasi Baris Elementer</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-mathbf-x-a-1-mathbf-b"><strong>3. Menghitung <span class="math notranslate nohighlight">\( \mathbf{x} = A^{-1} \mathbf{b} \)</span></strong></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -560,6 +570,167 @@ Matrix([[4, 8, 9]])  *  Matrix([[2, -3, 5], [7, 4, -1], [0, 6, 3]])  =  Matrix([
 </div>
 </section>
 </section>
+<section id="penyelesaian-persamaan-menggunakan-invers-matrik">
+<h3>Penyelesaian persamaan menggunakan invers matrik<a class="headerlink" href="#penyelesaian-persamaan-menggunakan-invers-matrik" title="Link to this heading">#</a></h3>
+<p>Kita diberikan sistem persamaan linear:</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{aligned}
+    -7x_1 - 6x_2 - 12x_3 &amp;= -33 \\
+    5x_1 + 5x_2 + 7x_3 &amp;= 24 \\
+    x_1 + 4x_3 &amp;= 5
+\end{aligned}
+\)</span></p>
+<section id="bentuk-matriks">
+<h4><strong>1. Bentuk Matriks</strong><a class="headerlink" href="#bentuk-matriks" title="Link to this heading">#</a></h4>
+<p>Sistem persamaan di atas dapat dituliskan dalam bentuk matriks:</p>
+<p><span class="math notranslate nohighlight">\(
+A \mathbf{x} = \mathbf{b}
+\)</span></p>
+<p>dengan:</p>
+<p><span class="math notranslate nohighlight">\(
+A =
+\begin{bmatrix}
+-7 &amp; -6 &amp; -12 \\
+5 &amp; 5 &amp; 7 \\
+1 &amp; 0 &amp; 4
+\end{bmatrix},
+\quad
+\mathbf{x} =
+\begin{bmatrix}
+x_1 \\ x_2 \\ x_3
+\end{bmatrix},
+\quad
+\mathbf{b} =
+\begin{bmatrix}
+-33 \\ 24 \\ 5
+\end{bmatrix}
+\)</span></p>
+<p>Penyelesaian sistem menggunakan invers matriks diberikan oleh:</p>
+<p><span class="math notranslate nohighlight">\(
+\mathbf{x} = A^{-1} \mathbf{b}
+\)</span></p>
+<p>Kita akan mencari <span class="math notranslate nohighlight">\( A^{-1} \)</span> menggunakan operasi baris elementer.</p>
+</section>
+<hr class="docutils" />
+<section id="menentukan-a-1-menggunakan-operasi-baris-elementer">
+<h4><strong>2. Menentukan <span class="math notranslate nohighlight">\( A^{-1} \)</span> Menggunakan Operasi Baris Elementer</strong><a class="headerlink" href="#menentukan-a-1-menggunakan-operasi-baris-elementer" title="Link to this heading">#</a></h4>
+<p>Kita mulai dengan matriks augmented:</p>
+<p><span class="math notranslate nohighlight">\(
+\left[ A \,|\, I \right] =
+\left[
+\begin{array}{ccc|ccc}
+-7 &amp; -6 &amp; -12 &amp; 1 &amp; 0 &amp; 0 \\
+5 &amp; 5 &amp; 7 &amp; 0 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 4 &amp; 0 &amp; 0 &amp; 1
+\end{array}
+\right]
+\)</span></p>
+<p><strong>Langkah 1: Ubah elemen (1,1) menjadi 1</strong>
+Kita bagi baris pertama dengan <span class="math notranslate nohighlight">\( -7 \)</span>:</p>
+<p><span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccc|ccc}
+1 &amp; \frac{6}{7} &amp; \frac{12}{7} &amp; -\frac{1}{7} &amp; 0 &amp; 0 \\
+5 &amp; 5 &amp; 7 &amp; 0 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 4 &amp; 0 &amp; 0 &amp; 1
+\end{array}
+\right]
+\)</span></p>
+<p><strong>Langkah 2: Nulifikasi elemen (2,1) dan (3,1)</strong><br />
+Baris kedua: <span class="math notranslate nohighlight">\( R_2 \leftarrow R_2 - 5R_1 \)</span><br />
+Baris ketiga: <span class="math notranslate nohighlight">\( R_3 \leftarrow R_3 - R_1 \)</span></p>
+<p><span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccc|ccc}
+1 &amp; \frac{6}{7} &amp; \frac{12}{7} &amp; -\frac{1}{7} &amp; 0 &amp; 0 \\
+0 &amp; \frac{5}{7} &amp; \frac{1}{7} &amp; \frac{5}{7} &amp; 1 &amp; 0 \\
+0 &amp; -\frac{6}{7} &amp; \frac{16}{7} &amp; \frac{1}{7} &amp; 0 &amp; 1
+\end{array}
+\right]
+\)</span></p>
+<p><strong>Langkah 3: Ubah elemen (2,2) menjadi 1</strong><br />
+Kita kalikan baris kedua dengan <span class="math notranslate nohighlight">\( \frac{7}{5} \)</span>:</p>
+<p><span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccc|ccc}
+1 &amp; \frac{6}{7} &amp; \frac{12}{7} &amp; -\frac{1}{7} &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; \frac{1}{5} &amp; \frac{1}{5} &amp; \frac{7}{5} &amp; 0 \\
+0 &amp; -\frac{6}{7} &amp; \frac{16}{7} &amp; \frac{1}{7} &amp; 0 &amp; 1
+\end{array}
+\right]
+\)</span></p>
+<p><strong>Langkah 4: Nulifikasi elemen (1,2) dan (3,2)</strong><br />
+Baris pertama: <span class="math notranslate nohighlight">\( R_1 \leftarrow R_1 - \frac{6}{7} R_2 \)</span><br />
+Baris ketiga: <span class="math notranslate nohighlight">\( R_3 \leftarrow R_3 + \frac{6}{7} R_2 \)</span></p>
+<p><span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccc|ccc}
+1 &amp; 0 &amp; \frac{10}{7} &amp; -\frac{5}{21} &amp; -\frac{6}{5} &amp; 0 \\
+0 &amp; 1 &amp; \frac{1}{5} &amp; \frac{1}{5} &amp; \frac{7}{5} &amp; 0 \\
+0 &amp; 0 &amp; \frac{22}{7} &amp; \frac{11}{35} &amp; \frac{42}{35} &amp; 1
+\end{array}
+\right]
+\)</span></p>
+<p><strong>Langkah 5: Ubah elemen (3,3) menjadi 1</strong><br />
+Kita kalikan baris ketiga dengan <span class="math notranslate nohighlight">\( \frac{7}{22} \)</span>:</p>
+<p><span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccc|ccc}
+1 &amp; 0 &amp; \frac{10}{7} &amp; -\frac{5}{21} &amp; -\frac{6}{5} &amp; 0 \\
+0 &amp; 1 &amp; \frac{1}{5} &amp; \frac{1}{5} &amp; \frac{7}{5} &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; \frac{1}{10} &amp; \frac{21}{22} &amp; \frac{7}{22}
+\end{array}
+\right]
+\)</span></p>
+<p><strong>Langkah 6: Nulifikasi elemen (1,3) dan (2,3)</strong><br />
+Baris pertama: <span class="math notranslate nohighlight">\( R_1 \leftarrow R_1 - \frac{10}{7} R_3 \)</span><br />
+Baris kedua: <span class="math notranslate nohighlight">\( R_2 \leftarrow R_2 - \frac{1}{5} R_3 \)</span></p>
+<p><span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{ccc|ccc}
+1 &amp; 0 &amp; 0 &amp; -\frac{8}{21} &amp; -\frac{9}{5} &amp; -\frac{10}{22} \\
+0 &amp; 1 &amp; 0 &amp; \frac{1}{5} - \frac{1}{50} &amp; \frac{7}{5} - \frac{21}{110} &amp; -\frac{7}{110} \\
+0 &amp; 0 &amp; 1 &amp; \frac{1}{10} &amp; \frac{21}{22} &amp; \frac{7}{22}
+\end{array}
+\right]
+\)</span></p>
+<p>Setelah disederhanakan, kita dapatkan invers matriks <span class="math notranslate nohighlight">\( A^{-1} \)</span>:</p>
+<p><span class="math notranslate nohighlight">\(
+A^{-1} =
+\begin{bmatrix}
+-\frac{8}{21} &amp; -\frac{9}{5} &amp; -\frac{5}{11} \\
+\frac{2}{7} &amp; \frac{37}{35} &amp; -\frac{7}{55} \\
+\frac{1}{10} &amp; \frac{21}{22} &amp; \frac{7}{22}
+\end{bmatrix}
+\)</span></p>
+</section>
+<hr class="docutils" />
+<section id="menghitung-mathbf-x-a-1-mathbf-b">
+<h4><strong>3. Menghitung <span class="math notranslate nohighlight">\( \mathbf{x} = A^{-1} \mathbf{b} \)</span></strong><a class="headerlink" href="#menghitung-mathbf-x-a-1-mathbf-b" title="Link to this heading">#</a></h4>
+<p><span class="math notranslate nohighlight">\(
+\mathbf{x} =
+\begin{bmatrix}
+-\frac{8}{21} &amp; -\frac{9}{5} &amp; -\frac{5}{11} \\
+\frac{2}{7} &amp; \frac{37}{35} &amp; -\frac{7}{55} \\
+\frac{1}{10} &amp; \frac{21}{22} &amp; \frac{7}{22}
+\end{bmatrix}
+\begin{bmatrix}
+-33 \\ 24 \\ 5
+\end{bmatrix}
+\)</span></p>
+<p>Setelah dihitung, diperoleh:</p>
+<p><span class="math notranslate nohighlight">\(
+\mathbf{x} =
+\begin{bmatrix}
+1 \\ 2 \\ 1
+\end{bmatrix}
+\)</span></p>
+<p>Jadi, solusi dari sistem persamaan adalah:</p>
+<p><span class="math notranslate nohighlight">\(
+x_1 = 1, \quad x_2 = 2, \quad x_3 = 1
+\)</span></p>
+</section>
+</section>
 </section>
 </section>
 
@@ -602,6 +773,15 @@ Matrix([[4, 8, 9]])  *  Matrix([[2, -3, 5], [7, 4, -1], [0, 6, 3]])  =  Matrix([
         <p class="prev-next-title">Penyelesaian Sistem Persamaan Linier</p>
       </div>
     </a>
+    <a class="right-next"
+       href="Solusi%20perslinier.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>Solusi Persamaan Linier</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -632,6 +812,12 @@ Matrix([[4, 8, 9]])  *  Matrix([[2, -3, 5], [7, 4, -1], [0, 6, 3]])  =  Matrix([
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perkalian-matriks">Perkalian Matriks</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-perkalian-matriks-dengan-matriks">Konsep Perkalian Matriks dengan Matriks</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-perkalian-matriks-dengan-skalar">Konsep Perkalian Matriks dengan Skalar</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-persamaan-menggunakan-invers-matrik">Penyelesaian persamaan menggunakan invers matrik</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-matriks"><strong>1. Bentuk Matriks</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-a-1-menggunakan-operasi-baris-elementer"><strong>2. Menentukan <span class="math notranslate nohighlight">\( A^{-1} \)</span> Menggunakan Operasi Baris Elementer</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-mathbf-x-a-1-mathbf-b"><strong>3. Menghitung <span class="math notranslate nohighlight">\( \mathbf{x} = A^{-1} \mathbf{b} \)</span></strong></a></li>
 </ul>
 </li>
 </ul>

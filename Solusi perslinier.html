@@ -60,6 +60,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Solusi perslinier';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -391,10 +393,11 @@ a. Solusi Unik (Tunggal)</p>
 <li><p>Syarat: Koefisien variabel harus memiliki determinan ≠ 0 (tidak sejajar atau identik)</p></li>
 </ul>
 <p>contoh:</p>
-<p>\begin{array}{cc}
-2x+3y=6 \
-x-y=1 \
-\end{array}</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
+2x+3y=6 \\
+x-y=1 \\
+\end{array}\)</span></p>
 <p>solusi: (x,y)=(3,2) (setelah diselesaikan dengan metode substitusi/eliminasi).</p>
 <p><br />
 b. Solusi Tak Hingga (Tak Terbatas)</p>
@@ -404,10 +407,11 @@ b. Solusi Tak Hingga (Tak Terbatas)</p>
 <li><p>Syarat: Dua persamaan setara, hanya berbeda skala.</p></li>
 </ul>
 <p>contoh:</p>
-<p>\begin{array}{cc}
-2x+3y=6 \
-4x+6y=12 \
-\end{array}</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
+2x+3y=6 \\
+4x+6y=12 \\
+\end{array}\)</span></p>
 <p>Solusi: Tak hingga banyaknya, karena persamaan kedua merupakan kelipatan pertama.</p>
 <p><br />
 c. Tidak Ada Solusi (Inkosisten)</p>
@@ -417,10 +421,11 @@ c. Tidak Ada Solusi (Inkosisten)</p>
 <li><p>Syarat: Koefisien variabel sama, tetapi konstanta berbeda.</p></li>
 </ul>
 <p>contoh:</p>
-<p>\begin{array}{cc}
-2x+3y=6 \
-4x+6y=10 \
-\end{array}</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
+2x+3y=6 \\
+4x+6y=10 \\
+\end{array}\)</span></p>
 <p>Solusi: Tidak ada solusi, karena kedua garis sejajar tetapi tidak identik.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="metode-eliminasi">
@@ -436,47 +441,55 @@ Langkah-Langkah Metode Eliminasi</p>
 <li><p><strong>Contoh</strong></p></li>
 </ul>
 <p>Diberikan persamaan linier:</p>
-<p>\begin{array}{cc}
-2x+3y=8 \
-4x-2y=10 \
-\end{array}</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
+2x+3y=8 \\
+4x-2y=10 \\
+\end{array}\)</span></p>
 <p><br />
 <strong>Langkah 1: Samakan koefisien salah satu variabel</strong></p>
 <ul class="simple">
 <li><p>Kita samakan koefisien X dengan mengalikan persamaan pertama dengan 2, sehingga menjadi:</p></li>
 </ul>
-<p>\begin{array}{cc}
-4x+6y=16 \
-\end{array}</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
+4x+6y=16 \\
+\end{array}
+\)</span></p>
 <p><br />
 sistem baru menjadi:</p>
-<p>\begin{array}{cc}
-4x+6y=16 \
-4x-2y= 10 \
-\end{array}</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
+4x+6y=16 \\
+4x-2y= 10 \\
+\end{array}
+\)</span></p>
 <p><br />
 <strong>Langkah 2: Kurangkan kedua persamaan</strong></p>
-<p>\begin{array}{cc}
-(4x+6y)-(4x-2y) = 10-16 \
-4x+6y-4x+2y= 6 \
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
+(4x+6y)-(4x-2y) = 10-16 \\
+4x+6y-4x+2y= 6 \\
 8y=6
 y=\frac{6}{8}=\frac{3}{4}
-\end{array}</p>
+\end{array}\)</span></p>
 <p><br />
 <strong>Langkah 3: Substitusi nilai y ke persamaan pertama</strong></p>
-<p>\begin{array}{cc}
-2x+3 (\frac{3}{4})=8 \
-2x+ \frac{9}{4}=8 \
-2x=8- \frac{9}{4} \
-2x= \frac{32}{4}- \frac{9}{4}= \frac{23}{4} \
-x=\frac{23}{8}
-\end{array}</p>
-<p><br />
-jadi:
+<p><span class="math notranslate nohighlight">\(
 \begin{array}{cc}
-X= \frac{23}{8} \
+2x+3 (\frac{3}{4})=8 \\
+2x+ \frac{9}{4}=8 \\
+2x=8- \frac{9}{4} \\
+2x= \frac{32}{4}- \frac{9}{4}= \frac{23}{4} \\
+x=\frac{23}{8}
+\end{array}\)</span></p>
+<p><br />
+jadi:</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{array}{cc}
+X= \frac{23}{8} \\
 y= \frac{3}{4}
-\end{array}</p>
+\end{array}\)</span></p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="metode-eliminasi-gauss">
 <h1><strong>Metode Eliminasi Gauss</strong><a class="headerlink" href="#metode-eliminasi-gauss" title="Link to this heading">#</a></h1>
